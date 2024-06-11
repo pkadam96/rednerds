@@ -1,11 +1,11 @@
-import { ChairDescription } from "./components/ChairDescription"
+import { AllRoutes } from "./routes/AllRoutes"
 
 function App() {
 
   return (
-    <>
-      <ChairDescription/>
-    </>
+    <div>
+      <AllRoutes/>
+    </div>
   )
 }
 
