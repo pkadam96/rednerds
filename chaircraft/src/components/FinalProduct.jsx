@@ -1,7 +1,5 @@
 import { useContext } from "react";
 import { PartsContext } from "../contexts/partContext";
-
-// Import the base images
 import seatImg from '../assets/seat.png'
 import backrestImg from '../assets/backrest.png'
 import armrestImg from '../assets/armrest.png'
@@ -35,7 +33,9 @@ const FinalProduct = () => {
     const { droppedItems } = useContext(PartsContext);
 
     const getVisibilityStyle = (partName) => {
-        return droppedItems.some(item => item.name.toLowerCase() === partName) ? partStyles[partName].base : partStyles[partName].hidden;
+        return droppedItems.some(item => item.name.toLowerCase() === partName) 
+        ? partStyles[partName].base 
+        : partStyles[partName].hidden;
     };
 
     return (
