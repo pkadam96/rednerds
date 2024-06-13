@@ -2,6 +2,9 @@
 
 ChairCraft is a 4-page web application built using ReactJS that allows users to virtually assemble a chair from various parts. The application provides an interactive and intuitive way to understand the different components of a chair and how they fit together.
 
+## Demo
+
+You can view the live demo of the application [here](https://rednerds-chaircraft.vercel.app/)
 
 ## Table of Contents
 
