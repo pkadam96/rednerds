@@ -77,3 +77,5 @@ ChairCraft is designed to provide users with a hands-on experience of assembling
 - ReactJS
 - Typescript
 - Tailwind CSS
+
+## THANK YOU 🙏
