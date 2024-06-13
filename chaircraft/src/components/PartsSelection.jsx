@@ -29,9 +29,9 @@ const PartsSelection = () => {
 
     return (
         <div className='bg-[#9586f3] h-screen flex flex-col items-center justify-center'>
-            <h1 className='text-2xl my-8 font-medium'>Select parts from the list</h1>
+            <h1 className='text-2xl my-8 font-medium'>Select Cards </h1>
             <div className="overflow-x-auto w-10/12">
-                <div className="bg-gradient-to-r from-[#1b1528] via-[#15101f] to-[#000] px-16 py-12 inline-block">
+                <div className="bg-gradient-to-r from-[#1b1528] via-[#15101f] to-[#000]  px-4 py-4 lg:px-16 lg:py-12 inline-block">
                     <div className="flex gap-12">
                         {partsData.map(part => (
                             <div
@@ -52,7 +52,7 @@ const PartsSelection = () => {
             </div>
             <Link to="/assemble">
                 <button
-                    className={`text-white text-2xl mt-8 px-12 py-4 rounded-lg ${selectedParts.length > 0 ? 'bg-gradient-to-r from-[#1b1528] via-[#15101f] to-[#000]' : 'bg-gray-400 cursor-not-allowed'}`}
+                    className={`text-white text-2xl mt-8 px-12 py-3 border-2 border-[#1b1528] rounded-lg ${selectedParts.length > 0 ? 'bg-gradient-to-r from-[#1b1528] via-[#15101f] to-[#000]' : 'bg-gray-400 cursor-not-allowed'}`}
                     disabled={selectedParts.length === 0}
                 >
                     Next

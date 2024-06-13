@@ -9,21 +9,27 @@ const ItemTypes = {
 };
 
 const DraggablePart = ({ part }) => {
-    const [, drag] = useDrag({ type: ItemTypes.PART, item: part });
+    const [, drag] = useDrag({
+        type: ItemTypes.PART,
+        item: part,
+    });
 
     return (
-        <div ref={drag} className="h-56 w-56 p-10 m-4 rounded-full bg-white flex items-center justify-center mr-12">
+        <div ref={drag} className="w-28 lg:h-56 h-28 lg:w-56 p-4 lg:p-10 lg:m-4 mx-1 my-4 rounded-full bg-white flex items-center justify-center lg:mr-12">
             <img src={part.image} alt={part.name} className="" />
         </div>
     );
 };
 
 const DroppableArea = ({ droppedItems, onDrop }) => {
-    const [, drop] = useDrop({ accept: ItemTypes.PART, drop: (item) => onDrop(item) });
+    const [, drop] = useDrop({
+        accept: ItemTypes.PART,
+        drop: (item) => onDrop(item),
+    });
 
     return (
-        <div ref={drop} className="flex flex-col h-96 w-96 border border-dashed border-gray-500 items-center justify-center bg-white">
-            <div className="flex items-center justify-center h-64 w-64 relative">
+        <div ref={drop} className="flex flex-col w-36 lg:h-96 h-36 lg:w-96 border border-dashed border-gray-500 items-center justify-center bg-white">
+            <div className="flex items-center justify-center w-32 lg:h-72 h-32 lg:w-72 relative">
                 <h1>Drag and Drop here</h1>
                 {droppedItems.map((item, index) => (
                     <img key={index} src={item.image} alt={item.name} className="absolute h-full w-full object-contain" />
@@ -60,7 +66,7 @@ const Assembly = () => {
 
     return (
         <div className="flex bg-gradient-to-r from-[#83edf4] via-[#9586f3] to-[#d098f8]">
-            <div className="pl-12 flex flex-col h-screen bg-gradient-to-r from-[#1b1528] via-[#15101f] to-[#000]">
+            <div className="lg:pl-12 flex flex-col h-screen bg-gradient-to-r from-[#1b1528] via-[#15101f] to-[#000]">
                 <div className="overflow-y-auto">
                     {selectedParts.map((ele) => (
                         <DraggablePart key={ele.id} part={ele} />
@@ -73,7 +79,7 @@ const Assembly = () => {
                 </div>
                 <Link to="/final-product">
                     <button
-                        className={`text-white text-2xl mt-8 px-12 py-4 rounded-lg ${droppedItems.length > 0 ? 'bg-gradient-to-r from-[#1b1528] via-[#15101f] to-[#000]' : 'bg-gray-400 cursor-not-allowed'}`}
+                        className={`text-white text-2xl mt-8 px-12 py-3 border-2 border-[#1b1528] rounded-lg ${droppedItems.length > 0 ? 'bg-gradient-to-r from-[#1b1528] via-[#15101f] to-[#000]' : 'bg-gray-400 cursor-not-allowed'}`}
                         disabled={droppedItems.length === 0}
                     >
                         Next
