@@ -4,7 +4,7 @@ import backrestImg from '../assets/backrest.png';
 import armrestImg from '../assets/armrest.png';
 import headrestImg from '../assets/headrest.png';
 import wheelsImg from '../assets/wheels.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { PartsContext } from '../contexts/partContext';
 
 const partsData = [
@@ -16,6 +16,7 @@ const partsData = [
 ];
 
 const PartsSelection = () => {
+    const navigate = useNavigate();
     const { selectedParts, setSelectedParts } = useContext(PartsContext);
 
     const handleSelectionChange = (id) => {
@@ -26,10 +27,20 @@ const PartsSelection = () => {
                 : [...prevState, selectedPart]
         );
     };
+    
+    const goBack=()=>{
+        navigate("/");
+        setSelectedParts([]);
+    }
 
     return (
         <div className='bg-[#9586f3] h-screen flex flex-col items-center justify-center'>
-            <h1 className='text-2xl my-8 font-medium'>Select Cards </h1>
+            <div className='w-full flex items-center px-8 lg:px-32'>
+                <h1 className='w-1/12'>
+                    <i className="fa-solid fa-arrow-left fa-2xl flex-2 cursor-pointer" onClick={()=> goBack()}></i>  
+                </h1>
+                <h1 className='w-11/12 text-2xl my-8 font-medium text-center'>Select Cards </h1>
+            </div>
             <div className="overflow-x-auto w-10/12">
                 <div className="bg-gradient-to-r from-[#1b1528] via-[#15101f] to-[#000]  px-4 py-4 lg:px-16 lg:py-12 inline-block">
                     <div className="flex gap-12">

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { PartsContext } from "../contexts/partContext";
 import { useDrag, useDrop } from "react-dnd";
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ItemTypes = {
     PART: 'part',
@@ -57,13 +57,17 @@ DraggablePart.propTypes = {
 };
 
 const Assembly = () => {
+    const navigate = useNavigate();
     const { selectedParts, droppedItems, setDroppedItems } = useContext(PartsContext);
 
     const handleDrop = (item) => {
         console.log('Dropped item:', item);
         setDroppedItems((prevItems) => [...prevItems, item]);
     };
-
+    const goBack=()=>{
+        navigate("/parts-selection");
+        setDroppedItems([]);
+    }
     return (
         <div className="flex bg-gradient-to-r from-[#83edf4] via-[#9586f3] to-[#d098f8]">
             <div className="lg:pl-12 flex flex-col h-screen bg-gradient-to-r from-[#1b1528] via-[#15101f] to-[#000]">
@@ -73,7 +77,12 @@ const Assembly = () => {
                     ))}
                 </div>
             </div>
-            <div className="w-full flex flex-col justify-center items-center">
+            <div className="w-full flex flex-col justify-between py-8 items-center">
+            <div className='w-full flex items-center px-8'>
+                <h1 className='w-1/12'>
+                    <i className="fa-solid fa-arrow-left fa-2xl flex-2 cursor-pointer" onClick={()=> goBack()}></i>  
+                </h1>
+            </div>
                 <div className="w-full flex items-center justify-center">
                     <DroppableArea droppedItems={droppedItems} onDrop={handleDrop} />
                 </div>

@@ -10,14 +10,14 @@ const ChairDescription = () => {
                     <div className='lg:w-2/5 w-full p-4 animate-slide-in-left'>
                         <img src={chairImg} alt="Office Chair" className="w-full animate-zoom-in" />
                     </div>
-                    <div className='lg:w-3/5 w-full p-4 mt-4 md:ml-8 lg:ml-12 xl:ml-20 text-center animate-slide-in-right'>
-                        <h1 className="text-5xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-[#83edf4] via-[#9586f3] to-[#d098f8]">Office Chair                          
+                    <div className='lg:w-3/5 w-full p-4 mt-4 md:ml-8 lg:ml-12 xl:ml-20 animate-slide-in-right'>
+                        <h1 className="text-5xl font-medium bg-clip-text text-center  lg:text-justify text-transparent bg-gradient-to-r from-[#83edf4] via-[#9586f3] to-[#d098f8]">Office Chair                          
                         </h1>
-                        <h2 className='text-white text-justify my-8 text-2xl'>
-                            <span className="text-3xl">Welcome to ChairCraft! </span>
-                            <br /><br /> 
-                            Learn about the different parts of an office chair
-                            and how to assemble one. 
+                        <h2 className='text-white my-8 text-2xl'>
+                            <p className="text-3xl text-center  lg:text-justify">Welcome to ChairCraft! </p>
+                            <br />
+                            <span className='text-justify'>Learn about the different parts of an office chair
+                            and how to assemble one. </span>
                             <br /><br /> 
                             Click START to begin.
                         </h2>
