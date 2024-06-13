@@ -13,7 +13,6 @@ You can view the live demo of the application [here](https://rednerds-chaircraft
 3. [Screens](#screens)
 4. [Installation](#installation)
 6. [Technologies Used](#technologies-used)
-7. [Screenshots](#screenshots)
 
    
 ## Introduction
@@ -34,18 +33,24 @@ ChairCraft is designed to provide users with a hands-on experience of assembling
 1. **Product Description**
     - Displays an image and description of the chair.
     - Contains a START button to proceed to the part selection screen.
+    - ![Product Description](screenshots/product_description.png)
+
 
 2. **Part Selection**
     - Shows a horizontal scrollable list of chair parts with images and names.
     - Users can select parts to be used in the assembly process.
+    - ![Part Selection](screenshots/part_selection.png)
 
 3. **Assembly Interface**
     - Provides a drag-and-drop area to assemble selected parts.
     - Displays selected parts in a vertical scrollable panel.
     - Allows partial assembly of the chair.
+    - ![Assembly Interface](screenshots/assembly_interface.png)
 
 4. **Final Product View**
     - Displays the final assembled chair based on the user's selections from the assembly interface.
+    - ![Final Product View](screenshots/final_product_view.png)
+
 
 
 ## Installation
@@ -72,7 +77,3 @@ ChairCraft is designed to provide users with a hands-on experience of assembling
 - ReactJS
 - Typescript
 - Tailwind CSS
-
-
-## Screenshots
-
